@@ -31,5 +31,9 @@ This data science project aims to leverage advanced analytics and machine learni
    - Changing all floats data types to ints ensure computational speed
 
 
+ ### Exploratory Data Analysis (EDA) 
+ ```python
+
+
    
    
