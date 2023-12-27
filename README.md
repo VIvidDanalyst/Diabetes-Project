@@ -41,7 +41,7 @@ This data science project aims to leverage advanced analytics and machine learni
 
  ### Exploratory Data Analysis (EDA)
  ---
- ```python
+```python
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt 
@@ -49,9 +49,54 @@ import seaborn as sns
 ## Libraries Importation
 
 df= pd.read_csv(r"C:\Users\ibori\Downloads\diabetes_binary_health_indicators_BRFSS2015.csv")
-## Data importation```
----
-![Dataset histogram ]( screenshots)
+## Data importation
+
+df.isnull().sum()
+## checking for Null values
+
+df.info()
+## checking data information(datatypes, count of records) 
+
+df.hist(figsize=(25,20))
+plt.show()
+
+# Change all floats to ints
+df["Diabetes_binary"] = df["Diabetes_binary"].astype(int)
+df["HighBP"] = df["HighBP"].astype(int)
+df["HighChol"] = df["HighChol"].astype(int)
+df["CholCheck"] = df["CholCheck"].astype(int)
+df["BMI"] = df["BMI"].astype(int)
+df["Smoker"] = df["Smoker"].astype(int)
+df["Stroke"] = df["Stroke"].astype(int)
+df["HeartDiseaseorAttack"] = df["HeartDiseaseorAttack"].astype(int)
+df["PhysActivity"] = df["PhysActivity"].astype(int)
+df["Fruits"] = df["Fruits"].astype(int) 
+df["Veggies"] = df["Veggies"].astype(int)
+df["HvyAlcoholConsump"] = df["HvyAlcoholConsump"].astype(int)
+df["AnyHealthcare"] = df["AnyHealthcare"].astype(int)
+df["NoDocbcCost"] = df["NoDocbcCost"].astype(int)
+df["GenHlth"] = df["GenHlth"].astype(int)
+df["MentHlth"] = df["MentHlth"].astype(int)
+df["PhysHlth"] = df["PhysHlth"].astype(int)
+df["DiffWalk"] = df["DiffWalk"].astype(int)
+df["Sex"] = df["Sex"].astype(int)
+df["Age"] = df["Age"].astype(int)
+df["Education"] = df["Education"].astype(int)
+df["Income"] =df["Income"].astype(int)
+```
+
+![Diabetes](https://github.com/VIvidDanalyst/Diabetes-Project/assets/139154608/b1da2641-3794-4b6a-8017-3f88d5ad308e)
+
+```python
+##Check correlation using a heatmap
+plt.figure(figsize = (30,20))
+sns.set(font_scale=1.5)
+sns.heatmap(df.corr(numeric_only=True),annot=True, cmap='Blues')
+plt.title("Diabetes Variable Correlations",fontsize=30)
+```
+
+
+
 
    
    
