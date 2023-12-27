@@ -1,3 +1,6 @@
+![Diabetes](https://github.com/VIvidDanalyst/Diabetes-Project/assets/139154608/3da915c6-ac71-4e97-b47d-52dc77147af4)
+
+
 ## Diabetes-Project
 **Diabetes** is a chronic metabolic disorder characterized by elevated levels of blood glucose, resulting from insufficient production or inefficient utilization of insulin. Insulin, a hormone produced by the pancreas, facilitates the absorption of glucose into cells for energy. In individuals with diabetes, this regulatory mechanism is impaired, leading to persistent hyperglycemia.
 
