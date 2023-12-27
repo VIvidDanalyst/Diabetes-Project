@@ -42,7 +42,16 @@ This data science project aims to leverage advanced analytics and machine learni
  ### Exploratory Data Analysis (EDA)
  ---
  ```python
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt 
+import seaborn as sns
+## Libraries Importation
 
+df= pd.read_csv(r"C:\Users\ibori\Downloads\diabetes_binary_health_indicators_BRFSS2015.csv")
+## Data importation```
+---
+![Dataset histogram ]( screenshots)
 
    
    
