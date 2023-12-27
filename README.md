@@ -104,7 +104,18 @@ sns.heatmap(corr, cmap='Blues', annot=True, fmt='.2%')
 
 ## Key Piont 
 ---
-From the heatmap analysis above there are several independent variable that influence the dependent variable (diabetes_binary) possitively or negative. The highest positively correlated to the dependent variable is the Gen_Hlth variable, Income variable is the highest negatively correlated to the dependent variable with -16.39%
+From the heatmap analysis above there are several independent variable that influence the dependent variable (diabetes_binary) possitively or negative. The highest positively correlated to the dependent variable is the Gen_Hlth variable, Income variable is the highest negatively correlated to the dependent variable with -16.39%.
+- Noticeble variables 
+   1. Gen_Hlth(+)
+   2. High_BP(+)
+   3. Diff_walk(+)
+   4. BMI(+)
+   5. High chol(+)
+   6. Age(+)
+   7. Heartdiseaseorattack(+)
+   8. Income(-)
+   9. Education(-)
+
 
 
 
