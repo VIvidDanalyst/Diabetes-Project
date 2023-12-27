@@ -36,10 +36,10 @@ This data science project aims to leverage advanced analytics and machine learni
 3.   Remove Null values : No
    - There appears to be no null values in the dataset 
 4.   Change Data Types : Yes
-   - Changing all floats data types to ints ensure computational speed
+   - Changing all floats data types to ints to ensure computational speed
 
 
- ### Exploratory Data Analysis (EDA)
+ ### Data Cleaning & Exploratory Data Analysis (EDA)
  ---
 ```python
 import pandas as pd
@@ -93,7 +93,14 @@ plt.figure(figsize = (30,20))
 sns.set(font_scale=1.5)
 sns.heatmap(df.corr(numeric_only=True),annot=True, cmap='Blues')
 plt.title("Diabetes Variable Correlations",fontsize=30)
+
+corr = df.corrwith(df['Diabetes_binary']) ### correlating the target varible with the independent variables 
+corr = pd.DataFrame(corr)
+plt.figure(figsize=(3,7))
+sns.heatmap(corr, cmap='Blues', annot=True, fmt='.2%')
 ```
+![corr](https://github.com/VIvidDanalyst/Diabetes-Project/assets/139154608/82659a5f-9dd8-47e9-9901-c810e3c19977)
+
 
 
 
