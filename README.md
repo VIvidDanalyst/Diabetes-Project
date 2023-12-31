@@ -123,6 +123,8 @@ labels = ('Non_Daibetic','Diabetic')
 plt.pie(df.Diabetes_binary.value_counts(),labels = labels,autopct='%.2f'  )
 plt.show() #Visaulization of the Target Variable 
 ```
+![viz](https://github.com/VIvidDanalyst/Diabetes-Project/assets/139154608/65320c69-dd04-4841-9648-d8854a792515)
+
 
 
 
