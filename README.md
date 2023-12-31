@@ -200,6 +200,11 @@ plt.show()
 ---
 ![EDAviz](https://github.com/VIvidDanalyst/Diabetes-Project/assets/139154608/cd3b1d0b-1e1d-47b0-bfc4-24414ee9175b)
 
+---
+
+![EDAviz](https://github.com/VIvidDanalyst/Diabetes-Project/assets/139154608/bc09b17b-ecd7-40c0-a3b7-bbb5b2d65832)
+
+
 
 
 
