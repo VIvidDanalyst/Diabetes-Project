@@ -125,6 +125,42 @@ plt.show() #Visaulization of the Target Variable
 ```
 ![viz](https://github.com/VIvidDanalyst/Diabetes-Project/assets/139154608/65320c69-dd04-4841-9648-d8854a792515)
 
+```python
+#Creating string variablles with the Binary datatype (0/1)
+df['diabetes_binary_str']= df['Diabetes_binary'].replace({0:'Non Diabetic',1:'Diabetic'})
+df['HighBP_str']= df['HighBP'].replace({0:'No ',1:'Yes'})
+df['Highchol_str']= df['HighChol'].replace({0:'No ',1:'Yes'})
+df['diffwalk_str']= df['DiffWalk'].replace({0:'No ',1:'Yes'})
+
+
+##Viz
+pd.crosstab(df.HighBP_str,df.diabetes_binary_str).plot(kind='bar',figsize=(8,8) )
+plt.title('High Blood Pressure vs Diabetes Frequency')
+plt.xlabel('HighBP')
+plt.ylabel('Frequency')
+plt.show()
+
+pd.crosstab(df.Highchol_str,df.diabetes_binary_str).plot(kind='bar',figsize=(8,8) )
+plt.title('High chol vs Diabetes Frequency')
+plt.xlabel('Highchol')
+plt.ylabel('Frequency')
+plt.show()
+
+pd.crosstab(df.diffwalk_str,df.diabetes_binary_str).plot(kind='bar',figsize=(8,8) )
+plt.title('Diffwalk vs Diabetes Frequency')
+plt.xlabel('Diffwalk')
+plt.ylabel('Frequency')
+plt.show()
+
+pd.crosstab(df.GenHlth,df.diabetes_binary_str).plot(kind='bar',figsize=(8,8) )
+plt.title('GenHlth vs Diabetes Frequency')
+plt.xlabel('GenHlth')
+plt.ylabel('Frequency')
+plt.show()
+```
+
+
+
 
 
 
