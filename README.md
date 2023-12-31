@@ -204,6 +204,16 @@ plt.show()
 
 ![EDAviz](https://github.com/VIvidDanalyst/Diabetes-Project/assets/139154608/bc09b17b-ecd7-40c0-a3b7-bbb5b2d65832)
 
+---
+
+### Findings From EDA Performed
+The EDA performed on the datasets highlighted several keypiont, some of the independent varaibles are (positively or negatively) Correlated to the target varaible. 
+
+- Positively Correlated
+    - The Variables positively correlated with the target variables are  Gen_Hlth,High_BP,Diff_walk,BMI,High chol,Age, Heartdiseaseorattack. What this connote is that when there is increase or the binary is yes the likelyhood of the patient being diabetic is high. For instance from the EDA viz the higher the age bracket the higher the chances of being diabetic and also if a patient is having difficulty walking the higher the chances of being diabetic vice-versa.
+- Negatively Correlated
+     - Independent variables like Income and Education is the highest correlated (nagatively) with the dependent varaibles. For instance the higher the income of individual the lower chances of being diabetic and also the Educational level of individuals enables healthy eating hence preventing diabetes. when the income is low the chances of being diabetic is high. 
+
 
 
 
