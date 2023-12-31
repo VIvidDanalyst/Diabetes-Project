@@ -122,10 +122,7 @@ df.Diabetes_binary.value_counts()
 labels = ('Non_Daibetic','Diabetic')
 plt.pie(df.Diabetes_binary.value_counts(),labels = labels,autopct='%.2f'  )
 plt.show() #Visaulization of the Target Variable 
-```
-![viz](https://github.com/VIvidDanalyst/Diabetes-Project/assets/139154608/65320c69-dd04-4841-9648-d8854a792515)
 
-```python
 #Creating string variablles with the Binary datatype (0/1)
 df['diabetes_binary_str']= df['Diabetes_binary'].replace({0:'Non Diabetic',1:'Diabetic'})
 df['HighBP_str']= df['HighBP'].replace({0:'No ',1:'Yes'})
@@ -157,7 +154,55 @@ plt.title('GenHlth vs Diabetes Frequency')
 plt.xlabel('GenHlth')
 plt.ylabel('Frequency')
 plt.show()
+
+## splitting data for visualization 
+df_no = df[df['Diabetes_binary'] == 0]
+df_yes = df[df['Diabetes_binary'] == 1]
+
+df_no_genhlth = df_no['GenHlth']
+df_yes_genhlth = df_yes['GenHlth']
+sns.kdeplot(df_no_genhlth,color='purple')
+sns.kdeplot(df_yes_genhlth,color='orange')
+plt.grid()
+plt.title('General Heath vs Diabetes_Binary Distribution')
+plt.legend(['Not Diabetic', 'Diabetic'])
+plt.show()
+
+df_no_income= df_no['Income']
+df_yes_income = df_yes['Income']
+sns.kdeplot(df_no_income,color='green')
+sns.kdeplot(df_yes_income,color='yellow')
+plt.grid()
+plt.title('Income vs Diabetes_Binary Distribution')
+plt.legend(['Not Diabetic', 'Diabetic'])
+plt.show()
+
+df_no_edu= df_no['Education']
+df_yes_edu = df_yes['Education']
+sns.kdeplot(df_no_edu,color='green')
+sns.kdeplot(df_yes_edu,color='blue')
+plt.grid()
+plt.title('Education vs Diabetes_Binary Distribution')
+plt.legend(['Not Diabetic', 'Diabetic'])
+plt.show()
+
+df_no_physhlth = df_no['PhysHlth']
+df_yes_physhlth = df_yes['PhysHlth']
+sns.kdeplot(df_no_physhlth,color='red')
+sns.kdeplot(df_yes_physhlth,color='orange')
+plt.grid()
+plt.title('General Heath vs Diabetes_Binary Distribution')
+plt.legend(['Not Diabetic', 'Diabetic'])
+plt.show()
+
 ```
+## EDA VIZ
+---
+![EDAviz](https://github.com/VIvidDanalyst/Diabetes-Project/assets/139154608/cd3b1d0b-1e1d-47b0-bfc4-24414ee9175b)
+
+
+
+
 
 
 
