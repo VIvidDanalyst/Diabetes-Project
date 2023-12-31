@@ -116,6 +116,13 @@ From the heatmap analysis above there are several independent variable that infl
    8. Income(-)
    9. Education(-)
 
+```Python
+df.Diabetes_binary.value_counts()
+
+labels = ('Non_Daibetic','Diabetic')
+plt.pie(df.Diabetes_binary.value_counts(),labels = labels,autopct='%.2f'  )
+plt.show() #Visaulization of the Target Variable 
+```
 
 
 
