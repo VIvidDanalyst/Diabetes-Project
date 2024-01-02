@@ -267,6 +267,16 @@ model_df= df.drop(columns=del_colomns,axis=1)
 - Logistic Regression
 - XGBoost
 
+  ```python
+  from sklearn.neighbors import KNeighborsClassifier
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.linear_model import LogisticRegression
+from xgboost import XGBRegressor
+from xgboost import XGBClassifier
+from sklearn.model_selection import GridSearchCV ###importing all needed libaries for the models
+```
+
 ### Model comparism 
 Comparing the accuracy of different models is crucial, especially in fields like medical diagnosis where identifying positive cases (e.g., detecting cancer) is of utmost importance. In such domains, minimizing the chance of missing positive cases (avoiding false negatives) is a priority due to the potentially severe consequences.
 
