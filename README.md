@@ -12,6 +12,12 @@ Type 2, more common in adults, is linked to lifestyle factors and insulin resist
 
 If left unmanaged, diabetes can lead to serious complications, including cardiovascular diseases, kidney dysfunction, and nerve damage. Regular monitoring, lifestyle modifications, and, in some cases, medication or insulin therapy are crucial components of diabetes management.
 
+### TABLE OF CONTENT
+- [Project Overview](#project-overview)
+- [Data Source](data-source)
+- [Tools](tools)
+- [Data Cleaning / Preperation](data-cleaning-/-preparation)
+
 ### Project Overview
 ---
 This data science project aims to leverage advanced analytics and machine learning teckniqies to gain valueble insights to diabetics related trends, risk factors and predictive modelling.
@@ -27,7 +33,7 @@ This data science project aims to leverage advanced analytics and machine learni
  ---
  - PYTHON JUPYTAL NOTEBOOK
 
- ### Data Cleaning/ Preparation
+ ### Data Cleaning / Preparation
  ---
 1.  Remove duplicate :No
    - I choose not to remove duplicate because these duplicates could show patterns and if removed could hinder the accuracy of the models
@@ -212,7 +218,61 @@ The EDA performed on the datasets highlighted several keypiont, some of the inde
 - Positively Correlated
     - The Variables positively correlated with the target variables are  Gen_Hlth,High_BP,Diff_walk,BMI,High chol,Age, Heartdiseaseorattack. What this connote is that when there is increase or the binary is yes the likelyhood of the patient being diabetic is high. For instance from the EDA viz the higher the age bracket the higher the chances of being diabetic and also if a patient is having difficulty walking the higher the chances of being diabetic vice-versa.
 - Negatively Correlated
-     - Independent variables like Income and Education is the highest correlated (nagatively) with the dependent varaibles. For instance the higher the income of individual the lower chances of being diabetic and also the Educational level of individuals enables healthy eating hence preventing diabetes. when the income is low the chances of being diabetic is high. 
+     - Independent variables like Income and Education is the highest correlated (nagatively) with the dependent varaibles. For instance the higher the income of individual the lower chances of being diabetic and also the Educational level of individuals enables healthy eating hence preventing diabetes. when the income is low the chances of being diabetic is high.
+ 
+ ### Feature Engineering & Selection 
+- I removed the created string variables created for EDA
+  
+  - Feature selection is carried out to improve model perfomance and also ensure fast training of models by reducing the independent variables.
+``` python
+##importing needed libraries for feature selection 
+from sklearn.feature_selection import SelectKBest,f_classif
+from sklearn.feature_selection import chi2
+
+k=13
+bestftt = SelectKBest(score_func=chi2)
+fit = bestftt.fit(X,y)
+df_scores = pd.DataFrame(fit.scores_)
+df_columns = pd.DataFrame(X.columns)
+#concatenating two dataframes for better visualization
+f_Scores = pd.concat([df_columns,df_scores],axis=1)
+f_Scores.columns = ['Feature','Score']
+n=f_Scores.shape[0]
+print(n)
+top_features = f_Scores.sort_values(by='Score', ascending=False).iloc[:k]
+top_features
+### this syntax choose the top 13 features chi2 score
+del_colomns = ['Fruits', 'Veggies', 'Sex', 'CholCheck', 'AnyHealthcare','Education','Smoker','NoDocbcCost'] # drop the rest variables
+model_df= df.drop(columns=del_colomns,axis=1)
+```
+### Balancing the Data
+- The original data with over 200,000 records is inbalance. To ensure high performance of all models we will be balancing the the data to create equal reprensentation of all outcome in the target variable.
+  ```python
+  nm = NearMiss(version = 1,n_neighbors=5)
+  x_sm,y_sm=nm.fit_resample(X,y) ##using nearmiss to Balance the data 
+  ```
+### Construcction of Models
+ In this project work i will be using five(5) Models to choose the model with high accuracy score they are
+ - K Nearest Neighbors
+- Decision Tree
+- Random Forests
+- Logistic Regression
+- XGBoost
+
+### Model comparism
+Comparing the accuracy of different models is crucial, especially in fields like medical diagnosis where identifying positive cases (e.g., detecting cancer) is of utmost importance. In such domains, minimizing the chance of missing positive cases (avoiding false negatives) is a priority due to the potentially severe consequences.
+
+Upon reviewing the models, it is evident that there is a notable risk of Type 2 errors, where false negatives occur. Recall, which is the ability to capture positive instances, and Type 2 error are inversely related (1 - recall = Type 2 error). This is particularly worrisome in medical scenarios, as a negative diagnosis when a condition is actually positive can have life-altering implications.
+
+Instead of solely focusing on accuracy, it is imperative to consider both accuracy and Type 2 error. Currently, XGBoost stands out with the lowest rate of Type 2 errors and the highest accuracy. The emphasis will now be on adjusting these models to enhance recall, ensuring a more robust ability to detect positive cases and minimizing the risk of false negatives.
+
+
+
+
+
+
+
+  
 
 
 
