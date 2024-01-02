@@ -23,7 +23,7 @@ If left unmanaged, diabetes can lead to serious complications, including cardiov
 - [Findings From EDA Performed](#findings-from-eda-performed)
 - [Feature Engineering & Selection ](#feature-engineering-&-Selection)
 - [Balancing the Data](#balancing-the-data)
-- [Construcction of Models](#constuction-of-models)
+- [Construction of Models](#constuction-of-models)
 - [Model comparism](#model-comparism)
 
 ### Project Overview
@@ -259,7 +259,7 @@ model_df= df.drop(columns=del_colomns,axis=1)
   nm = NearMiss(version = 1,n_neighbors=5)
   x_sm,y_sm=nm.fit_resample(X,y) ##using nearmiss to Balance the data 
   ```
-### Construcction of Models
+### Construction of Models
  In this project work i will be using five(5) Models to choose the model with high accuracy score they are
  - K Nearest Neighbors
 - Decision Tree
