@@ -13,10 +13,10 @@ Type 2, more common in adults, is linked to lifestyle factors and insulin resist
 If left unmanaged, diabetes can lead to serious complications, including cardiovascular diseases, kidney dysfunction, and nerve damage. Regular monitoring, lifestyle modifications, and, in some cases, medication or insulin therapy are crucial components of diabetes management.
 
 ### TABLE OF CONTENT
-- [Project Overview](#project_overview)
-- [Data Source](#data_source)
+- [Project Overview](#project-overview)
+- [Data Source](#data-source)
 - [Tools](#tools)
-- [Data Cleaning / Preperation](#data_cleaning_/_preparation)
+- [Data Cleaning / Preperation](#data-cleaning-/-preparation)
 
 ### Project Overview
 ---
