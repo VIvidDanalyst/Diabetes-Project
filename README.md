@@ -23,7 +23,7 @@ If left unmanaged, diabetes can lead to serious complications, including cardiov
 - [Findings From EDA Performed](#findings-from-eda-performed)
 - [Feature Engineering & Selection ](#feature-engineering-&-Selection)
 - [Balancing the Data](#balancing-the-data)
-- [Construction of Models](#constuction-of-models)
+- [Construction of Models](#construction-of-models)
 - [Model comparism](#model-comparism)
 
 ### Project Overview
