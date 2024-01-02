@@ -12,19 +12,21 @@ Type 2, more common in adults, is linked to lifestyle factors and insulin resist
 
 If left unmanaged, diabetes can lead to serious complications, including cardiovascular diseases, kidney dysfunction, and nerve damage. Regular monitoring, lifestyle modifications, and, in some cases, medication or insulin therapy are crucial components of diabetes management.
 
-### TABLE OF CONTENT
+### TABLE OF CONTENTS
 - [Project Overview](#project-overview)
 - [Data Source](#data-source)
-- [Tools !🧰](#tools-!🧰)
-- [Data Cleaning / Preperation](#data-cleaning/preparation)
-- [Data Cleaning & Exploratory Data Analysis (EDA)](#data-cleaning-&-exploratory-data-analysis-(eda))
-- [Key Piont ](#key-piont)
-- [EDA VIZ](#eda-viz)
-- [Findings From EDA Performed](#findings-from-eda-performed)
-- [Feature Engineering & Selection ](#feature-engineering-&-Selection)
+- [Tools](#tools)
+- [Data Cleaning / Preparation](#data-cleaning--preparation)
+- [Data Cleaning & Exploratory Data Analysis (EDA)](#data-cleaning--exploratory-data-analysis-eda)
+- [Key Point](#key-point)
+- [EDA Viz](#eda-viz)
+- [Findings from EDA Performed](#findings-from-eda-performed)
+- [Feature Engineering & Selection](#feature-engineering--selection)
 - [Balancing the Data](#balancing-the-data)
 - [Construction of Models](#construction-of-models)
-- [Model comparism](#model-comparism)
+- [Model Comparison](#model-comparison)
+
+
 
 ### Project Overview
 ---
@@ -37,7 +39,7 @@ This data science project aims to leverage advanced analytics and machine learni
  ---
  The primary dataset used for this project is the *Cdc's BRFSS2015 data* The behavioral risk factor surveillance (BRFSS) is an health related telephone survey administered by the *CDC* gathering responses from over 400,000 Americans. The survey conducted since 1984 delves into various aspect of including health-related risk behaviors, chronic health conditions, and the utilization of preventative services.  For the purposes of this project, data from the 2015 survey was utilized, obtained in CSV format from *Kaggle*  .This dataset has 253,680 survey responses to the CDC's BRFSS2015 survey, and  21 feature variables. These variables consist of either directly posed questions to participants or derived values calculated from individual responses.  
 
- ### Tools !🧰
+ ### Tools 
  ---
  - PYTHON JUPYTAL NOTEBOOK
 
@@ -116,7 +118,7 @@ sns.heatmap(corr, cmap='Blues', annot=True, fmt='.2%')
 ![corr](https://github.com/VIvidDanalyst/Diabetes-Project/assets/139154608/82659a5f-9dd8-47e9-9901-c810e3c19977)
 ![corrwith](https://github.com/VIvidDanalyst/Diabetes-Project/assets/139154608/4ccd5df8-ab44-46a6-a023-b40a5475a2e3)
 
-## Key Piont 
+## Key Point
 ---
 From the heatmap analysis above there are several independent variable that influence the dependent variable (diabetes_binary) possitively or negative. The highest positively correlated to the dependent variable is the Gen_Hlth variable, Income variable is the highest negatively correlated to the dependent variable with -16.39%.
 - Noticeble variables 
@@ -221,6 +223,7 @@ plt.show()
 ---
 
 ### Findings From EDA Performed
+---
 The EDA performed on the datasets highlighted several keypiont, some of the independent varaibles are (positively or negatively) Correlated to the target varaible. 
 
 - Positively Correlated
@@ -229,6 +232,7 @@ The EDA performed on the datasets highlighted several keypiont, some of the inde
      - Independent variables like Income and Education is the highest correlated (nagatively) with the dependent varaibles. For instance the higher the income of individual the lower chances of being diabetic and also the Educational level of individuals enables healthy eating hence preventing diabetes. when the income is low the chances of being diabetic is high.
  
  ### Feature Engineering & Selection 
+ ---
 - I removed the created string variables created for EDA
   
   - Feature selection is carried out to improve model perfomance and also ensure fast training of models by reducing the independent variables.
@@ -254,12 +258,14 @@ del_colomns = ['Fruits', 'Veggies', 'Sex', 'CholCheck', 'AnyHealthcare','Educati
 model_df= df.drop(columns=del_colomns,axis=1)
 ```
 ### Balancing the Data
+---
 - The original data with over 200,000 records is inbalance. To ensure high performance of all models we will be balancing the the data to create equal reprensentation of all outcome in the target variable.
   ```python
   nm = NearMiss(version = 1,n_neighbors=5)
   x_sm,y_sm=nm.fit_resample(X,y) ##using nearmiss to Balance the data 
   ```
 ### Construction of Models
+---
  In this project work i will be using five(5) Models to choose the model with high accuracy score they are
  - K Nearest Neighbors
 - Decision Tree
@@ -267,8 +273,8 @@ model_df= df.drop(columns=del_colomns,axis=1)
 - Logistic Regression
 - XGBoost
 
-  ```python
-  from sklearn.neighbors import KNeighborsClassifier
+```python
+from sklearn.neighbors import KNeighborsClassifier
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
@@ -277,7 +283,8 @@ from xgboost import XGBClassifier
 from sklearn.model_selection import GridSearchCV ###importing all needed libaries for the models
 ```
 
-### Model comparism 
+### Model Comparison 
+---
 Comparing the accuracy of different models is crucial, especially in fields like medical diagnosis where identifying positive cases (e.g., detecting cancer) is of utmost importance. In such domains, minimizing the chance of missing positive cases (avoiding false negatives) is a priority due to the potentially severe consequences.
 
 Upon reviewing the models, it is evident that there is a notable risk of Type 2 errors, where false negatives occur. Recall, which is the ability to capture positive instances, and Type 2 error are inversely related (1 - recall = Type 2 error). This is particularly worrisome in medical scenarios, as a negative diagnosis when a condition is actually positive can have life-altering implications.
