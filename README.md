@@ -17,6 +17,14 @@ If left unmanaged, diabetes can lead to serious complications, including cardiov
 - [Data Source](#data-source)
 - [Tools !🧰](#tools-!🧰)
 - [Data Cleaning / Preperation](#data-cleaning/preparation)
+- [Data Cleaning & Exploratory Data Analysis (EDA)](#data-cleaning-&-exploratory-data-analysis-(eda))
+- [Key Piont ](#key-piont)
+- [EDA VIZ](#eda-viz)
+- [Findings From EDA Performed](#findings-from-eda-performed)
+- [Feature Engineering & Selection ](#feature-engineering-&-Selection)
+- [Balancing the Data](#balancing-the-data)
+- [Construcction of Models](#constuction-of-models)
+- [Model comparism](#model-comparism)
 
 ### Project Overview
 ---
@@ -259,7 +267,7 @@ model_df= df.drop(columns=del_colomns,axis=1)
 - Logistic Regression
 - XGBoost
 
-### Model comparism
+### Model comparism 
 Comparing the accuracy of different models is crucial, especially in fields like medical diagnosis where identifying positive cases (e.g., detecting cancer) is of utmost importance. In such domains, minimizing the chance of missing positive cases (avoiding false negatives) is a priority due to the potentially severe consequences.
 
 Upon reviewing the models, it is evident that there is a notable risk of Type 2 errors, where false negatives occur. Recall, which is the ability to capture positive instances, and Type 2 error are inversely related (1 - recall = Type 2 error). This is particularly worrisome in medical scenarios, as a negative diagnosis when a condition is actually positive can have life-altering implications.
