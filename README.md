@@ -14,9 +14,9 @@ If left unmanaged, diabetes can lead to serious complications, including cardiov
 
 ### TABLE OF CONTENT
 - [Project Overview](#project_overview)
-- [Data Source](data_source)
-- [Tools](tools)
-- [Data Cleaning / Preperation](data_cleaning_/_preparation)
+- [Data Source](#data_source)
+- [Tools](#tools)
+- [Data Cleaning / Preperation](#data_cleaning_/_preparation)
 
 ### Project Overview
 ---
